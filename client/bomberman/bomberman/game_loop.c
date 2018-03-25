@@ -17,9 +17,11 @@ void game_loop (SDL_Event event, t_game game){
     game.sock = -1;
     
     load_images(&game);
-    
 
-    
+    // FPS
+    int numFrames = 0;
+    Uint32 startTime = SDL_GetTicks();
+    float fps;
     //SDL_Event event;
     SDL_bool done;
     
@@ -27,6 +29,7 @@ void game_loop (SDL_Event event, t_game game){
     Update_menu_ip_render(game.window_ip, game.menu_ip);
     
     while (done) {
+        SDL_Log("Number of logical CPU cores: %d", SDL_GetCPUCount());
         if (SDL_PollEvent(&event)) {
             switch (event.type) {
                 case SDL_QUIT:
@@ -127,6 +130,11 @@ void game_loop (SDL_Event event, t_game game){
                     break;
             }
         }
+        ++numFrames;
+
+        fps = ( numFrames/(float)(SDL_GetTicks() - startTime) )*1000;
+        SDL_Log("FPS: %u", fps);
+
     }
 }
 

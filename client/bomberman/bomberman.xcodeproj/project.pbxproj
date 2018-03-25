@@ -352,6 +352,7 @@
 					"$(inherited)",
 					/usr/local/Cellar/sdl2/2.0.8/lib,
 				);
+				OBJROOT = /Users/virgile/Sites/etna/DEVC/client/bomberman/builds;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -368,6 +369,7 @@
 					"$(inherited)",
 					/usr/local/Cellar/sdl2/2.0.8/lib,
 				);
+				OBJROOT = /Users/virgile/Sites/etna/DEVC/client/bomberman/builds;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
